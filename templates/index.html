@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text Analyzer</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Toggle CSS -->
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h1>Qadeer Raza</h1>
+                        <h2>Software Engineer</h2>
+                        <h3>Welcome to Text Analyzer</h3>
+                        <p>Write your text below and select an operation:</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="/analyze/" method="post" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <textarea name="text" class="form-control" rows="5">{{text}}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="removePunc" value="on" data-toggle="toggle" data-on="Remove Punctuation" data-off="Remove Punctuation">
+                                <input type="checkbox" name="charCount" value="on"  data-toggle="toggle" data-on="Count Characters" data-off="Count Characters">
+                                <input type="checkbox" name="spaceCount" value="on"  data-toggle="toggle" data-on="Count Spaces" data-off="Count Spaces">
+                                <input type="checkbox" name="upperCase" value="on"  data-toggle="toggle" data-on="Upper Case" data-off="Upper Case">
+                                <input type="checkbox" name="lowerCase" value="on"  data-toggle="toggle" data-on="Lower Case" data-off="Lower Case">
+                                <input type="checkbox" name="newLineRemover" value="on"  data-toggle="toggle" data-on="New Line Remover" data-off="New Line Remover">
+                                <input type="checkbox" name="spaceRemover" value="on"  data-toggle="toggle" data-on="Space Remover" data-off="Space Remover">
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Toggle JS -->
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</body>
+
+</html>

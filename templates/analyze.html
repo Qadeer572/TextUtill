@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Text</title>
+</head>
+<body>
+    <h1>Your Analyze Text --- {{purpose}}</h1>
+    {% if removePunc or upperCase or newLineRemover or spaceRemover or lowerCase %}
+      <p>{{ analyzeText }}</p>
+    {% endif %}
+
+    {% if charCount %}
+        <h4>Number of Character : {{analyzeText}}</h4>
+    {% endif %}
+     
+    {% if spaceCount %}
+        
+       <h4>Number of Spaces : {{analyzeText}}</h4>
+     {% endif %}
+     <form action="/" method='get'>
+        <button type="submite" value={{originalText}} name="text">Back</button>
+      </form>
+     
+</body>
+</html>
